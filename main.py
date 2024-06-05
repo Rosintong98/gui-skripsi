@@ -24,7 +24,7 @@ from utils.preprocess import (
     tfIdf
 )
 from utils.eda import find_high_term_document
-
+nltk.download('punkt')
 c = st.container()
 
 with st.sidebar:
