@@ -10,6 +10,9 @@ from nltk.util import ngrams
 from nltk.tokenize import word_tokenize
 from Sastrawi.Stemmer.StemmerFactory import StemmerFactory
 import warnings
+import nltk
+nltk.download('stopwords')
+nltk.download('punkt')
 warnings.filterwarnings("ignore")
 
 factory = StemmerFactory()
