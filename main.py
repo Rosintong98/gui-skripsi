@@ -25,6 +25,7 @@ from utils.preprocess import (
 )
 from utils.eda import find_high_term_document
 nltk.download('punkt')
+nltk.download('stopwords')
 c = st.container()
 
 with st.sidebar:
