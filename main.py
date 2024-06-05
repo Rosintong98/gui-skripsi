@@ -207,6 +207,7 @@ expander_kmeans = c.expander("K-Means", expanded=True)
 if st.session_state.get("process_to_kmeans") or 'tfidf' in st.session_state:
     data = st.session_state.tfidf
     df = st.session_state.df
+    k_cluster = st.session_state.k_cluster
     results = []
 
     for k in range(2, 17):  # Mengubah range sesuai kebutuhan
@@ -235,7 +236,7 @@ if st.session_state.get("process_to_kmeans") or 'tfidf' in st.session_state:
     expander_kmeans.markdown("## Silhouette Coefficient")
     expander_kmeans.pyplot(fig)
     
-    kmeans = KMeans(n_clusters=int(optimal_n['n_clusters']), random_state=0, n_init=10, max_iter=100)
+    kmeans = KMeans(n_clusters=int(k_cluster), random_state=0, n_init=10, max_iter=100)
     kmeans.fit(data)
     labels = kmeans.labels_
     
